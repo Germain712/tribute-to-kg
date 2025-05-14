@@ -1,0 +1,176 @@
+/* styles.css */
+
+:root {
+  --green: #007847;
+  --yellow: #FFD100;
+  --black: #000000;
+  --white: #ffffff;
+  --red: #CE1126;
+  --purple: #582C83;
+  --background: #f4f4f4;
+  --text: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 8px;
+  z-index: 100;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.site-header {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--black);
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.main-nav a:focus {
+  outline: 3px solid var(--yellow);
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.content {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.tribute-text,
+.about {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-left: 6px solid var(--red);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.tribute-text h2,
+.about h2 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+.site-footer {
+  background-color: var(--purple);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.photo-grid figure {
+  margin: 0;
+  position: relative;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-grid figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+@media (min-width: 1024px) {
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktops */
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets (landscape) */
+  }
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets (portrait) */
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .main-nav a {
+    text-align: center;
+    padding: 1rem;
+  }
+}
